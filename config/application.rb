@@ -38,5 +38,12 @@ module SixarmRailsCrm
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # Configure generators
+    config.generators do |generator|
+      generator.test_framework :rspec, :fixture => true
+      generator.fixture_replacement :factory_girl, :dir=>"spec/factories"
+    end
+
   end
 end
